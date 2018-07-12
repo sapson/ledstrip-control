@@ -1,32 +1,43 @@
+
 #include <EasingLibrary.h>
 
 QuarticEase ease;
-
-const int ledStripPin = 9;   // Connection for the ledstrip (via ULN2803) 
-const int switchPin = 2;     // pin number to connect the switches to 
-/*
-    PIN 2 --- Switch --- 10 K Ohm resistor --- GROUND
-                     --- 5V between switch and 10 K Ohm 
-    Pull down configuration
-    Switch -> Normal Open configuration             
-*/
+const int ledStrip1Pin = 6 ;    // Connection for the ledstrip (via ULN2803) 
+const int ledStrip2Pin = 5 ;    // Connection for the ledstrip (via ULN2803) 
+const int switchPin = 3;        // pin number to connect the switch(es) to 
+const int pirPin = 7 ;          // Optional PIR
+const int speedPin = 2 ;        // Optional potentiometer to control the fade on time
 
 double easedPosition, t = 0;
 
-int switchState;             // the current reading from the input pin
-int lastSwitchState = LOW;   // the previous reading from the input pin
+int switchState, pirState;    // the current reading from the input pin
+int lastSwitchState = LOW;    // the previous reading from the input pin
+int lastPirState = LOW;
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
 unsigned long lastDebounceTime = 0; // the last time the output pin was toggled
 unsigned long debounceDelay = 50;   // the debounce time; increase if the output flickers
 
+bool debug = false;
+bool useSpeedControl = true;
+
+NUMBER readSpeed() {
+  /* analog voltage read between 0 and 5V */
+  int curspeed = analogRead(speedPin);
+  float speed = curspeed * (5.0 / 1024.0);
+  return speed;
+}
+
 void setup()
 {
-  
-  Serial.begin(9600);
-  Serial.println("Debugging started");
-  delay(2000); // Give reader a chance to see the output.
-  
+  if (debug) {
+    Serial.begin(9600);
+    Serial.println("Debugging started");
+    delay(2000); // Give reader a chance to see the output.
+  }
+  if (useSpeedControl) {
+
+  } 
   ease.setDuration(5);
   ease.setTotalChangeInPosition(255);
 
