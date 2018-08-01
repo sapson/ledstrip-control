@@ -29,9 +29,16 @@ void setup()
   ease.setDuration(5);                //has to be made dynamic later
   ease.setTotalChangeInPosition(255);
 
+  /*
   pinMode(ledStrip1Pin, OUTPUT);
   pinMode(ledStrip2Pin,OUTPUT);
-  pinMode(switchPin, INPUT);
+  */
+  //DDB0 = 1;
+  //DDB1 = 1;
+
+  DDRB |= (0<<DDB4)|(0<<DDB3)|(1<<DDB1)|(1<<DDB0);
+
+  //pinMode(switchPin, INPUT);
   //pinMode(pirPin,INPUT);
 
   // Run once after reboot of the arduino
@@ -88,7 +95,7 @@ void smoothOn()
     easedPosition = ease.easeInOut(t);
     analogWrite(ledStrip1Pin, (unsigned char)easedPosition);
     analogWrite(ledStrip2Pin, (unsigned char)easedPosition);
-    t += 0.02;
+    t += 0.01;
     delay(5);
   }
   easedPosition = 255;

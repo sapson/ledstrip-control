@@ -1,0 +1,6 @@
+{
+    "board": "attiny:avr:ATtinyX5",
+    "configuration": "cpu=attiny85,clock=internal1",
+    "port": "/dev/cu.wchusbserialfa130",
+    "sketch": "eased-onoff/eased-onoff.ino"
+}

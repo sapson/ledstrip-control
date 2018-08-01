@@ -3,6 +3,9 @@
         {
             "name": "Mac",
             "includePath": [
+                "/Users/gcg004/Library/Arduino15/packages/attiny/hardware/avr/1.0.2/**",
+                "/Users/gcg004/Library/Arduino15/packages/esp8266/tools/**",
+                "/Users/gcg004/Library/Arduino15/packages/esp8266/hardware/esp8266/2.4.1/**",
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/lib/EasingLibrary"
             ],
