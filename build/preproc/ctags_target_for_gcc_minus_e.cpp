@@ -1,31 +1,24 @@
-#include <EasingLibrary.h>
-#define bitGet(p,m) ((p) & (m)) // Get the value of a bit, like bitGet(PORTB, BIT(5));
-#define bitSet(p,m) ((p) |= (m)) // Set the value of a bit (set it to 1), like bitSet(PORTB, BIT(2));
-#define bitClear(p,m) ((p) &= ~(m)) // Clear a bit (set it to 0), like bitClear(PORTB, BIT(2));
-#define bitFlip(p,m) ((p) ^= (m))
-#define bitWrite(c,p,m) (c ? bit_set(p,m) : bit_clear(p,m))
-#define BIT(x) (0x01 << (x))
-#define LONGBIT(x) ((unsigned long)0x00000001 << (x))
-
-
-
+# 1 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
+# 1 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
+# 2 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino" 2
+# 12 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
 QuarticEase ease;
 
 // for attiny85
 
 const byte ledStrip1Pin = 1; // Connection for the ledstrip (via ULN2803) PB1
 const byte ledStrip2Pin = 0; // Connection for the ledstrip (via ULN2803) PB0
-const byte switchPin = 4;    // pin number to connect the switch(es) to PB4
-const byte pirPin = 3;       // Optional PIR PB3
+const byte switchPin = 4; // pin number to connect the switch(es) to PB4
+const byte pirPin = 3; // Optional PIR PB3
 
 double easedPosition, t = 0;
 
-int switchState;           // the current reading from the input pin
-int lastSwitchState = LOW; // the previous reading from the input pin
+int switchState; // the current reading from the input pin
+int lastSwitchState = 0x0; // the previous reading from the input pin
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
 unsigned long lastDebounceTime = 0; // the last time the output pin was toggled
-unsigned long debounceDelay = 50;   // the debounce time; increase if the output flickers
+unsigned long debounceDelay = 50; // the debounce time; increase if the output flickers
 
 void setup()
 {
@@ -40,7 +33,7 @@ void setup()
   */
 
   // set input and output mode via DDRB register (instead of pinMode)
-  DDRB |= (0 << DDB4) | (0 << DDB3) | (1 << DDB1) | (1 << DDB0);
+  (*(volatile uint8_t *)((0x17) + 0x20)) |= (0 << 4) | (0 << 3) | (1 << 1) | (1 << 0);
 
   // Run once after reboot of the arduino
   smoothOn();
@@ -52,15 +45,15 @@ void loop()
 {
   t = 0;
   // read the state of the door switches
-  int reading = LOW;
-  
-  if (bitGet(PINB,BIT(4)))
+  int reading = 0x0;
+
+  if ((((*(volatile uint8_t *)((0x16) + 0x20))) & ((0x01 << (4)))) /* Get the value of a bit, like bitGet(PORTB, BIT(5));*/)
   {
-    reading = HIGH;
-  } 
+    reading = 0x1;
+  }
   else
   {
-    reading = LOW;
+    reading = 0x0;
   }
 
   if (reading != lastSwitchState)
@@ -80,13 +73,13 @@ void loop()
       switchState = reading;
 
       // check if the pushbutton is pressed. If it is, the switchState is HIGH:
-      if ((switchState == HIGH) and (easedPosition == 0))
+      if ((switchState == 0x1) and (easedPosition == 0))
       {
         // Serial.println("On");
         smoothOn();
       }
 
-      if ((switchState == LOW) and (easedPosition > 0))
+      if ((switchState == 0x0) and (easedPosition > 0))
       {
         smoothOff();
         //  Serial.println("Off");

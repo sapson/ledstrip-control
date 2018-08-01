@@ -1,0 +1,82 @@
+[
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "/Users/gcg004/Library/Arduino15/packages/arduino/hardware/avr/1.6.21/cores/arduino"
+  },
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "/Users/gcg004/Library/Arduino15/packages/attiny/hardware/avr/1.0.2/variants/tiny8"
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/ledstrip-control/build/sketch/eased-onoff.ino.cpp",
+    "Include": "EasingLibrary.h",
+    "Includepath": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary"
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/ledstrip-control/build/sketch/eased-onoff.ino.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/BackEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/BounceEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/CircularEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/CubicEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/EasingBase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/ElasticEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/ExponentialEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/LinearEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/QuadraticEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/QuarticEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/QuinticEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/Users/gcg004/Documents/Arduino/libraries/EasingLibrary/SineEase.cpp",
+    "Include": "",
+    "Includepath": ""
+  }
+]

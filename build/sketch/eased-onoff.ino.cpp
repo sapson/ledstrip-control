@@ -1,3 +1,6 @@
+#include <Arduino.h>
+#line 1 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
+#line 1 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
 #include <EasingLibrary.h>
 #define bitGet(p,m) ((p) & (m)) // Get the value of a bit, like bitGet(PORTB, BIT(5));
 #define bitSet(p,m) ((p) |= (m)) // Set the value of a bit (set it to 1), like bitSet(PORTB, BIT(2));
@@ -27,6 +30,15 @@ int lastSwitchState = LOW; // the previous reading from the input pin
 unsigned long lastDebounceTime = 0; // the last time the output pin was toggled
 unsigned long debounceDelay = 50;   // the debounce time; increase if the output flickers
 
+#line 30 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
+void setup();
+#line 51 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
+void loop();
+#line 100 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
+void smoothOn();
+#line 117 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
+void smoothOff();
+#line 30 "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino"
 void setup()
 {
   ease.setDuration(5); //has to be made dynamic later
@@ -129,3 +141,4 @@ void smoothOff()
   //  PORTB &= ~(1<<ledStrip2Pin)  ~(1<<ledStrip1Pin);
   easedPosition = 0;
 }
+

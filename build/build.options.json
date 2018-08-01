@@ -1,0 +1,10 @@
+{
+  "builtInLibrariesFolders": "/Applications/Arduino.app/Contents/Java/libraries",
+  "customBuildProperties": "build.path=/Users/gcg004/Documents/ledstrip-control/build,build.warn_data_percentage=75,runtime.tools.avr-gcc.path=/Users/gcg004/Library/Arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2,runtime.tools.avrdude.path=/Users/gcg004/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9,runtime.tools.arduinoOTA.path=/Users/gcg004/Library/Arduino15/packages/arduino/tools/arduinoOTA/1.1.1",
+  "fqbn": "attiny:avr:ATtinyX5:cpu=attiny85,clock=internal1",
+  "hardwareFolders": "/Applications/Arduino.app/Contents/Java/hardware,/Users/gcg004/Library/Arduino15/packages,/Users/gcg004/Documents/Arduino/hardware",
+  "otherLibrariesFolders": "/Users/gcg004/Documents/Arduino/libraries",
+  "runtime.ide.version": "10805",
+  "sketchLocation": "/Users/gcg004/Documents/ledstrip-control/eased-onoff/eased-onoff.ino",
+  "toolsFolders": "/Applications/Arduino.app/Contents/Java/tools-builder,/Applications/Arduino.app/Contents/Java/hardware/tools/avr,/Users/gcg004/Library/Arduino15/packages"
+}
