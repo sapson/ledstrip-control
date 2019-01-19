@@ -33,7 +33,7 @@ void setup()
   */
 
   // set input and output mode via DDRB register (instead of pinMode)
-  (*(volatile uint8_t *)((0x17) + 0x20)) |= (0 << 4) | (0 << 3) | (1 << 1) | (1 << 0);
+  DDRB |= (0 << DDB4) | (0 << DDB3) | (1 << DDB1) | (1 << DDB0);
 
   // Run once after reboot of the arduino
   smoothOn();
@@ -47,7 +47,7 @@ void loop()
   // read the state of the door switches
   int reading = 0x0;
 
-  if ((((*(volatile uint8_t *)((0x16) + 0x20))) & ((0x01 << (4)))) /* Get the value of a bit, like bitGet(PORTB, BIT(5));*/)
+  if (((PINB) & ((0x01 << (4)))) /* Get the value of a bit, like bitGet(PORTB, BIT(5));*/)
   {
     reading = 0x1;
   }

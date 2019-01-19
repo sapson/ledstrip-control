@@ -1,7 +1,7 @@
 {
   "builtInLibrariesFolders": "/Applications/Arduino.app/Contents/Java/libraries",
-  "customBuildProperties": "build.path=/Users/gcg004/Documents/ledstrip-control/build,build.warn_data_percentage=75,runtime.tools.avr-gcc.path=/Users/gcg004/Library/Arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2,runtime.tools.avrdude.path=/Users/gcg004/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9,runtime.tools.arduinoOTA.path=/Users/gcg004/Library/Arduino15/packages/arduino/tools/arduinoOTA/1.1.1",
-  "fqbn": "attiny:avr:ATtinyX5:cpu=attiny85,clock=internal1",
+  "customBuildProperties": "build.path=/Users/gcg004/Documents/ledstrip-control/build,build.warn_data_percentage=75,runtime.tools.esptool.path=/Users/gcg004/Library/Arduino15/packages/esp8266/tools/esptool/0.4.13,runtime.tools.xtensa-lx106-elf-gcc.path=/Users/gcg004/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2,runtime.tools.mkspiffs.path=/Users/gcg004/Library/Arduino15/packages/esp8266/tools/mkspiffs/0.2.0",
+  "fqbn": "esp8266:esp8266:d1:CpuFrequency=80,FlashSize=4M1M,LwIPVariant=v2mss536,Debug=Disabled,DebugLevel=None____,FlashErase=none,UploadSpeed=921600",
   "hardwareFolders": "/Applications/Arduino.app/Contents/Java/hardware,/Users/gcg004/Library/Arduino15/packages,/Users/gcg004/Documents/Arduino/hardware",
   "otherLibrariesFolders": "/Users/gcg004/Documents/Arduino/libraries",
   "runtime.ide.version": "10805",
